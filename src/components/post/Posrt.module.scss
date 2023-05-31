@@ -1,0 +1,61 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.iconLink{
+  display: flex;
+  align-items: start;
+  width: 75px;
+  justify-content: start;
+  margin: 0;
+  text-decoration: none;
+  color: black;
+
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+.userName{
+  display: inline-block;;
+  width: 30px;
+  font-size: 1rem ;
+}
+
+.titlePost{
+  width: 600px;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.body{
+  padding-bottom: 10px;
+  text-align:justify;
+  width: 600px;
+  margin: 0;
+}
+
+.button{
+  width: 100px;
+  &:hover{
+    color: black;
+  }
+}
+.comment{
+  margin: 5px 0;
+  width: 580px;
+  background-color: #c5c0c0;
+  text-align:justify;
+  border-radius: 5px;
+  padding:10px;
+}
+.emailComment{
+  font-size: 1rem;
+}
+.textComment{
+margin: 0;
+  width: 550px;
+}
