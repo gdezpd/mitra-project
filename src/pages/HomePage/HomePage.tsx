@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Post from '../../components/post/Post';
 import { useActions } from "../../hooks/useActions";
 import { isFetchingStatus, rootThunks } from "../../store/rootSlice";
@@ -36,8 +36,7 @@ const HomePage = () => {
     }
 
     return (
-        <div>
-
+        <div className={s.containerHome} >
             {posts.map((el, index) => {
                     const user = users.find(user => user.id === el.userId)
                     const commentsPost = comments.filter(post => post.postId === el.id)
