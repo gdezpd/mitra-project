@@ -40,6 +40,9 @@ export const api = {
     getPosts(currentPage:number) {
         return instance.get<Array<PostType>>(`/posts?_limit=10&_page=${currentPage}`)
     },
+    getAllPosts() {
+        return instance.get<Array<PostType>>(`/posts`)
+    },
     getUsers() {
         return instance.get<Array<UserType>>('/users')
     },

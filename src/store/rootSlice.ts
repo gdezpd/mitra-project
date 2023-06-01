@@ -18,6 +18,17 @@ export const getPosts = createAsyncThunk<PostType[], any, { state: RootState }>(
         dispatch(isFetchingStatus(false))
     }
 })
+export const getAllPosts = createAsyncThunk<PostType[], any, { state: RootState }>('root/getAllPosts', async (_, {
+    rejectWithValue,
+    dispatch
+}) => {
+    try {
+        const result = await api.getAllPosts()
+        return result.data
+    } catch (error) {
+        return rejectWithValue(null)
+    }
+})
 export const getUsers = createAsyncThunk<UserType[], any>('root/getUsers', async (_, { rejectWithValue }) => {
     try {
         const result = await api.getUsers()
@@ -40,9 +51,11 @@ const rootSlice = createSlice(
         name: 'root',
         initialState: {
             currentPage: 1,
+            searchValue:'',
             totalCount: 0,
             fetching: true,
             posts: [] as PostType[],
+            allPosts: [] as PostType[],
             users: [] as UserType[],
             comments: [] as CommentsType[],
         },
@@ -56,11 +69,18 @@ const rootSlice = createSlice(
             setTotalCount: (state, action: PayloadAction<number>) => {
                 state.totalCount = action.payload
             },
+            searchValue: (state, action: PayloadAction<string>) => {
+                state.searchValue = action.payload
+            },
         },
         extraReducers: builder => {
             builder
                 .addCase(getPosts.fulfilled, (state, action) => {
                     state.posts.push(...action.payload)
+                })
+                .addCase(getAllPosts.fulfilled, (state, action) => {
+                    console.log(action)
+                    state.allPosts.push(...action.payload)
                 })
                 .addCase(getUsers.fulfilled, (state, action) => {
                     state.users.push(...action.payload)
@@ -74,13 +94,15 @@ const rootSlice = createSlice(
 
 export const rootThunks = {
     getPosts,
+    getAllPosts,
     getUsers,
     getComments,
 }
 export const {
     isFetchingStatus,
     setCurrentPage,
-    setTotalCount
+    setTotalCount,
+    searchValue
 } = rootSlice.actions
 
 export const root = rootSlice.reducer
