@@ -14,7 +14,7 @@ export const BurgerMenu = ({ toggleMobileMenu, isShown }: BurgerMenuType) => {
                 <span></span>
             </label>
             <div className={` ${s.menuBox} ${isShown ? s.menuBoxOpen : ''}`}>
-                {/*<img src={Image} alt='my logo' className={s.myPhoto}/>*/}
+
                 <div className={s.myPhoto}/>
                 <h3 className={s.email}>
                     chobanyuk.pavell@gmail.com

@@ -16,10 +16,11 @@ function App() {
 
     return (
         <div className='App'>
-            <BurgerMenu toggleMobileMenu={toggleMobileMenu} isShown={isShown}/>
-            <div className={s.img}>
-                <img src='https://img.hhcdn.ru/employer-logo/4157981.png'/>
+            <div className={s.header}>
+                <BurgerMenu toggleMobileMenu={toggleMobileMenu} isShown={isShown}/>
+                    <img className={s.img} src='https://img.hhcdn.ru/employer-logo/4157981.png'/>
             </div>
+
 
             <div className={s.container} onClick={() => setIsShown(false)}>
                 <AppRouter/>

@@ -56,6 +56,7 @@ const rootSlice = createSlice(
             fetching: true,
             posts: [] as PostType[],
             allPosts: [] as PostType[],
+            sortPosts: [] as PostType[],
             users: [] as UserType[],
             comments: [] as CommentsType[],
         },
@@ -72,6 +73,9 @@ const rootSlice = createSlice(
             searchValue: (state, action: PayloadAction<string>) => {
                 state.searchValue = action.payload
             },
+            sortPostsCreator: (state, action: PayloadAction<PostType[]> ) => {
+                 state.sortPosts = action.payload
+            },
         },
         extraReducers: builder => {
             builder
@@ -79,7 +83,6 @@ const rootSlice = createSlice(
                     state.posts.push(...action.payload)
                 })
                 .addCase(getAllPosts.fulfilled, (state, action) => {
-                    console.log(action)
                     state.allPosts.push(...action.payload)
                 })
                 .addCase(getUsers.fulfilled, (state, action) => {
@@ -102,7 +105,8 @@ export const {
     isFetchingStatus,
     setCurrentPage,
     setTotalCount,
-    searchValue
+    searchValue,
+    sortPostsCreator
 } = rootSlice.actions
 
 export const root = rootSlice.reducer

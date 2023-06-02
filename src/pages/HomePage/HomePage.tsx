@@ -1,30 +1,47 @@
-import React, { useEffect } from 'react';
-import Post from '../../components/post/Post';
+import React, { useEffect, useState } from 'react';
 import { useActions } from "../../hooks/useActions";
-import { getAllPosts, isFetchingStatus, rootThunks } from "../../store/rootSlice";
+import { isFetchingStatus, rootThunks, sortPostsCreator } from "../../store/rootSlice";
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import s from './HomePage.module.scss'
 import { SearchForm } from "../../components/searchForm/SearchForm";
+import { Button } from 'react-bootstrap';
+import { ArrayPage } from '../../components/sortArray/ArrayPage';
+import { ArrayAllPosts } from '../../components/filteredPosts/ArrayAllPosts';
+import { all } from "axios";
 
 const HomePage = () => {
     const dispatch = useAppDispatch()
 
     const { getPosts, getUsers, getAllPosts } = useActions(rootThunks)
-    const comments = useAppSelector(state => state.root.comments)
-    const postsPage = useAppSelector(state => state.root.posts)
-    const allPosts = useAppSelector(state => state.root.allPosts)
-    const users = useAppSelector(state => state.root.users)
-    const fetching = useAppSelector(state => state.root.fetching)
-    const totalCount = useAppSelector(state => state.root.totalCount)
-    const searchValue = useAppSelector(state => state.root.searchValue)
+
+    const {
+        postsPage,
+        allPosts,
+        sortPosts,
+        fetching,
+        totalCount,
+        searchValue
+    } = useAppSelector(state => ({
+        postsPage: state.root.posts,
+        allPosts: state.root.allPosts,
+        sortPosts: state.root.sortPosts,
+        fetching: state.root.fetching,
+        totalCount: state.root.totalCount,
+        searchValue: state.root.searchValue,
+    }))
+
+    const [sort, setSort] = useState(false)
 
     useEffect(() => {
         if (fetching) {
             getPosts({})
-            getUsers({})
-            getAllPosts({})
         }
     }, [fetching])
+
+    useEffect(() => {
+        getAllPosts({})
+        getUsers({})
+    }, [])
 
     useEffect(() => {
         document.addEventListener('scroll', scrollHandler)
@@ -39,41 +56,46 @@ const HomePage = () => {
             dispatch(isFetchingStatus(true))
         }
     }
-    const filteredPosts = allPosts.filter(search => {
-        return search.title.toLowerCase().includes(searchValue)
-    })
 
+
+    const onChangeSortPosts = () => {
+        const workArray = searchValue === '' ? postsPage : allPosts
+
+        if (!sort) {
+            const a = [...(workArray || [])].sort((a, b) => {
+                const nameA = a.title.toUpperCase();
+                const nameB = b.title.toUpperCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            })
+            dispatch(sortPostsCreator(a))
+            setSort(prev => !prev)
+        } else if (sort) {
+            dispatch(sortPostsCreator(workArray))
+            setSort(prev => !prev)
+        }
+
+
+    }
 
     return (
         <div className={s.containerHome}>
-            <SearchForm/>
+
+            <div className={s.toolsWrapper}>
+                <SearchForm/>
+                <Button variant='secondary' size='lg' active className={s.button} onClick={onChangeSortPosts}>
+                    Sort posts
+                </Button>
+            </div>
             {
                 searchValue === '' ?
-                    (postsPage.map((el, index) => {
-                            const user = users.find(user => user.id === el.userId)
-                            const commentsPost = comments.filter(post => post.postId === el.id)
-                            if (user) {
-                                return <div key={index} className={s.wrapperPost}>
-                                    <Post title={el.title} body={el.body} userName={user.username} userId={user.id}
-                                          postId={el.id}
-                                          commentsPost={commentsPost}/>
-                                </div>
-                            }
-                        }
-                    )) : (allPosts.filter(search => {
-                        return search.title.toLowerCase().includes(searchValue.toLowerCase())
-                    }).map((el, index) => {
-                            const user = users.find(user => user.id === el.userId)
-                            const commentsPost = comments.filter(post => post.postId === el.id)
-                            if (user) {
-                                return <div key={index} className={s.wrapperPost}>
-                                    <Post title={el.title} body={el.body} userName={user.username} userId={user.id}
-                                          postId={el.id}
-                                          commentsPost={commentsPost}/>
-                                </div>
-                            }
-                        }
-                    ))
+                    <ArrayPage postsPage={postsPage} sortPosts={sortPosts} sort={sort}/>
+                    : <ArrayAllPosts allPosts={allPosts} sortPosts={sortPosts} searchValue={searchValue} sort={sort}/>
             }
 
         </div>

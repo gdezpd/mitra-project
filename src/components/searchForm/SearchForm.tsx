@@ -17,13 +17,13 @@ export const SearchForm = () => {
     }, [debounceValue])
 
     return (
-        <Form>
+        <Form style={{ width: '100%', padding: '0 10px' }}>
             <Form.Group className='mb-3' controlId='formBasicEmail'>
-                <Form.Label>Search by title</Form.Label>
                 <Form.Control
-                    placeholder='Search'
+                    type='Search'
+                    placeholder='Search by title'
                     value={value}
-                    onChange={(e)=>setValue(e.target.value)}
+                    onChange={(e) => setValue(e.target.value)}
                 />
             </Form.Group>
         </Form>
