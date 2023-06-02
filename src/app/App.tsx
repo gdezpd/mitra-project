@@ -18,9 +18,8 @@ function App() {
         <div className='App'>
             <div className={s.header}>
                 <BurgerMenu toggleMobileMenu={toggleMobileMenu} isShown={isShown}/>
-                    <img className={s.img} src='https://img.hhcdn.ru/employer-logo/4157981.png'/>
+                <img className={s.img} src='https://img.hhcdn.ru/employer-logo/4157981.png'/>
             </div>
-
 
             <div className={s.container} onClick={() => setIsShown(false)}>
                 <AppRouter/>

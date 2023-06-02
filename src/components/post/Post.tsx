@@ -5,7 +5,7 @@ import { useActions } from "../../hooks/useActions";
 import { rootThunks } from "../../store/rootSlice";
 import { CommentsType } from "../../store/api";
 import { ReactComponent as Icon } from "../../assets/icon/user.svg";
-import s from './Posrt.module.scss'
+import s from './Post.module.scss'
 
 type PostType = {
     title: string

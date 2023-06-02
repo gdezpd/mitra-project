@@ -37,7 +37,7 @@ export type CommentsType = {
 }
 
 export const api = {
-    getPosts(currentPage:number) {
+    getPosts(currentPage: number) {
         return instance.get<Array<PostType>>(`/posts?_limit=10&_page=${currentPage}`)
     },
     getAllPosts() {

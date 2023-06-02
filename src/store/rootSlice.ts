@@ -51,7 +51,7 @@ const rootSlice = createSlice(
         name: 'root',
         initialState: {
             currentPage: 1,
-            searchValue:'',
+            searchValue: '',
             totalCount: 0,
             fetching: true,
             posts: [] as PostType[],
@@ -73,8 +73,8 @@ const rootSlice = createSlice(
             searchValue: (state, action: PayloadAction<string>) => {
                 state.searchValue = action.payload
             },
-            sortPostsCreator: (state, action: PayloadAction<PostType[]> ) => {
-                 state.sortPosts = action.payload
+            sortPostsCreator: (state, action: PayloadAction<PostType[]>) => {
+                state.sortPosts = action.payload
             },
         },
         extraReducers: builder => {

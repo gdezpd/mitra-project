@@ -1,6 +1,5 @@
 import React from "react"
 import s from './Burger.module.scss'
-import  Image  from "./111.jpg";
 
 type BurgerMenuType = {
     toggleMobileMenu: () => void
@@ -19,7 +18,6 @@ export const BurgerMenu = ({ toggleMobileMenu, isShown }: BurgerMenuType) => {
                 <h3 className={s.email}>
                     chobanyuk.pavell@gmail.com
                 </h3>
-
 
                 <ul className={s.links}>
                     <li style={{ listStyleType: 'none' }}><a className={s.menuItem} href='/about'
