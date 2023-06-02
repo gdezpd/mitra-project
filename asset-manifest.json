@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/mitra-project/static/css/main.831dda4f.css",
-    "main.js": "/mitra-project/static/js/main.9e2863f6.js",
-    "static/css/227.f2313325.chunk.css": "/mitra-project/static/css/227.f2313325.chunk.css",
-    "static/js/227.26c1bcec.chunk.js": "/mitra-project/static/js/227.26c1bcec.chunk.js",
-    "static/css/359.f1e022b5.chunk.css": "/mitra-project/static/css/359.f1e022b5.chunk.css",
-    "static/js/359.5d1e2c94.chunk.js": "/mitra-project/static/js/359.5d1e2c94.chunk.js",
-    "static/css/168.0999197f.chunk.css": "/mitra-project/static/css/168.0999197f.chunk.css",
-    "static/js/168.67b34ea8.chunk.js": "/mitra-project/static/js/168.67b34ea8.chunk.js",
-    "static/js/942.bb57cbc7.chunk.js": "/mitra-project/static/js/942.bb57cbc7.chunk.js",
-    "static/media/111.jpg": "/mitra-project/static/media/111.424e88c7795efe660d8f.jpg",
-    "static/media/user.svg": "/mitra-project/static/media/user.a36a0f9de3c2bae928d02420189c2e8d.svg",
-    "index.html": "/mitra-project/index.html",
-    "main.831dda4f.css.map": "/mitra-project/static/css/main.831dda4f.css.map",
-    "main.9e2863f6.js.map": "/mitra-project/static/js/main.9e2863f6.js.map",
-    "227.f2313325.chunk.css.map": "/mitra-project/static/css/227.f2313325.chunk.css.map",
-    "227.26c1bcec.chunk.js.map": "/mitra-project/static/js/227.26c1bcec.chunk.js.map",
-    "359.f1e022b5.chunk.css.map": "/mitra-project/static/css/359.f1e022b5.chunk.css.map",
-    "359.5d1e2c94.chunk.js.map": "/mitra-project/static/js/359.5d1e2c94.chunk.js.map",
-    "168.0999197f.chunk.css.map": "/mitra-project/static/css/168.0999197f.chunk.css.map",
-    "168.67b34ea8.chunk.js.map": "/mitra-project/static/js/168.67b34ea8.chunk.js.map",
-    "942.bb57cbc7.chunk.js.map": "/mitra-project/static/js/942.bb57cbc7.chunk.js.map"
+    "main.css": "/gdezpd/mitra-project/static/css/main.97521cb6.css",
+    "main.js": "/gdezpd/mitra-project/static/js/main.ace0576d.js",
+    "static/css/227.f2313325.chunk.css": "/gdezpd/mitra-project/static/css/227.f2313325.chunk.css",
+    "static/js/227.26c1bcec.chunk.js": "/gdezpd/mitra-project/static/js/227.26c1bcec.chunk.js",
+    "static/css/932.e81f8bd9.chunk.css": "/gdezpd/mitra-project/static/css/932.e81f8bd9.chunk.css",
+    "static/js/932.d4f6ae8d.chunk.js": "/gdezpd/mitra-project/static/js/932.d4f6ae8d.chunk.js",
+    "static/css/408.3ea46324.chunk.css": "/gdezpd/mitra-project/static/css/408.3ea46324.chunk.css",
+    "static/js/408.11574c00.chunk.js": "/gdezpd/mitra-project/static/js/408.11574c00.chunk.js",
+    "static/js/776.096b6952.chunk.js": "/gdezpd/mitra-project/static/js/776.096b6952.chunk.js",
+    "static/media/111.jpg": "/gdezpd/mitra-project/static/media/111.424e88c7795efe660d8f.jpg",
+    "static/media/user.svg": "/gdezpd/mitra-project/static/media/user.a36a0f9de3c2bae928d02420189c2e8d.svg",
+    "index.html": "/gdezpd/mitra-project/index.html",
+    "main.97521cb6.css.map": "/gdezpd/mitra-project/static/css/main.97521cb6.css.map",
+    "main.ace0576d.js.map": "/gdezpd/mitra-project/static/js/main.ace0576d.js.map",
+    "227.f2313325.chunk.css.map": "/gdezpd/mitra-project/static/css/227.f2313325.chunk.css.map",
+    "227.26c1bcec.chunk.js.map": "/gdezpd/mitra-project/static/js/227.26c1bcec.chunk.js.map",
+    "932.e81f8bd9.chunk.css.map": "/gdezpd/mitra-project/static/css/932.e81f8bd9.chunk.css.map",
+    "932.d4f6ae8d.chunk.js.map": "/gdezpd/mitra-project/static/js/932.d4f6ae8d.chunk.js.map",
+    "408.3ea46324.chunk.css.map": "/gdezpd/mitra-project/static/css/408.3ea46324.chunk.css.map",
+    "408.11574c00.chunk.js.map": "/gdezpd/mitra-project/static/js/408.11574c00.chunk.js.map",
+    "776.096b6952.chunk.js.map": "/gdezpd/mitra-project/static/js/776.096b6952.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.831dda4f.css",
-    "static/js/main.9e2863f6.js"
+    "static/css/main.97521cb6.css",
+    "static/js/main.ace0576d.js"
   ]
 }
