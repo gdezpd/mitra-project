@@ -8,6 +8,7 @@
     padding: 73px 20px 0 20px;
   }
 }
+
 .wrapperPost {
   padding: 10px;
   border: 1px solid grey;
@@ -16,14 +17,21 @@
   background-color: #e7e4e4;
 
 }
-.toolsWrapper{
- display: flex;
+
+.toolsWrapper {
+  display: flex;
 }
-.button{
+
+.button {
   padding: 0 20px;
   height: 38px;
   width: 170px;
+
   &:hover {
     background-color: #333333;
+  }
+
+  @media (max-width: 376px) {
+    font-size: 15px;
   }
 }

@@ -86,7 +86,8 @@ const rootSlice = createSlice(
                     state.allPosts.push(...action.payload)
                 })
                 .addCase(getUsers.fulfilled, (state, action) => {
-                    state.users.push(...action.payload)
+                    console.log(action.payload)
+                    state.users = action.payload
                 })
                 .addCase(getComments.fulfilled, (state, action) => {
                     state.comments.push(...action.payload)

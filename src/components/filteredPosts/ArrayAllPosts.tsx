@@ -1,14 +1,14 @@
+import React from "react";
 import { PostType } from "../../store/api";
 import { useAppSelector } from "../../store/store";
-import s from "../../pages/HomePage/HomePage.module.scss";
 import Post from "../post/Post";
-import React from "react";
+import s from "../../pages/HomePage/HomePage.module.scss";
 
 type FilteredPostsType = {
     allPosts: PostType[],
     sortPosts: PostType[],
     searchValue: string,
-    sort:boolean
+    sort: boolean
 }
 
 export const ArrayAllPosts = ({
@@ -17,6 +17,7 @@ export const ArrayAllPosts = ({
                                   searchValue,
                                   sort
                               }: FilteredPostsType) => {
+
     const {
         comments,
         users,
@@ -24,6 +25,7 @@ export const ArrayAllPosts = ({
         comments: state.root.comments,
         users: state.root.users,
     }))
+
     return (
         <>
             {(sort ? sortPosts : allPosts).filter(search => {

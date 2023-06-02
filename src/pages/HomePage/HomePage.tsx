@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useActions } from "../../hooks/useActions";
+import { Button } from 'react-bootstrap';
 import { isFetchingStatus, rootThunks, sortPostsCreator } from "../../store/rootSlice";
 import { useAppDispatch, useAppSelector } from '../../store/store';
-import s from './HomePage.module.scss'
 import { SearchForm } from "../../components/searchForm/SearchForm";
-import { Button } from 'react-bootstrap';
 import { ArrayPage } from '../../components/sortArray/ArrayPage';
 import { ArrayAllPosts } from '../../components/filteredPosts/ArrayAllPosts';
-import { all } from "axios";
+import { useActions } from "../../hooks/useActions";
+import s from './HomePage.module.scss'
 
 const HomePage = () => {
     const dispatch = useAppDispatch()
@@ -79,13 +78,10 @@ const HomePage = () => {
             dispatch(sortPostsCreator(workArray))
             setSort(prev => !prev)
         }
-
-
     }
 
     return (
         <div className={s.containerHome}>
-
             <div className={s.toolsWrapper}>
                 <SearchForm/>
                 <Button variant='secondary' size='lg' active className={s.button} onClick={onChangeSortPosts}>
@@ -97,7 +93,6 @@ const HomePage = () => {
                     <ArrayPage postsPage={postsPage} sortPosts={sortPosts} sort={sort}/>
                     : <ArrayAllPosts allPosts={allPosts} sortPosts={sortPosts} searchValue={searchValue} sort={sort}/>
             }
-
         </div>
     );
 };

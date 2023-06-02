@@ -1,8 +1,8 @@
+import React from "react";
 import { PostType } from "../../store/api";
 import { useAppSelector } from "../../store/store";
-import s from "../../pages/HomePage/HomePage.module.scss";
 import Post from "../post/Post";
-import React from "react";
+import s from "../../pages/HomePage/HomePage.module.scss";
 
 type SortArrayType = {
     postsPage: PostType[],

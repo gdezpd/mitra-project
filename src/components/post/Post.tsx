@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { ReactComponent as Icon } from "../../assets/icon/user.svg";
 import Button from 'react-bootstrap/Button';
-
-import s from './Posrt.module.scss'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 import { rootThunks } from "../../store/rootSlice";
 import { CommentsType } from "../../store/api";
-import { Tab, Tabs } from 'react-bootstrap';
+import { ReactComponent as Icon } from "../../assets/icon/user.svg";
+import s from './Posrt.module.scss'
 
 type PostType = {
     title: string
@@ -20,6 +18,7 @@ type PostType = {
 
 const Post = ({ title, body, userName, userId, postId, commentsPost }: PostType) => {
 
+    const dataUser = useParams()
     const { getComments } = useActions(rootThunks)
 
     const [fetchingComments, setFetchingComments] = useState(false)
@@ -38,10 +37,15 @@ const Post = ({ title, body, userName, userId, postId, commentsPost }: PostType)
 
     return (
         <div className={s.container}>
-            <Link to={`/user/${userId}`} className={s.iconLink}>
-                <Icon className={s.icon}/>
-                <h5 className={s.userName}>{userName}</h5>
-            </Link>
+            {
+                Number(dataUser.userId) === userId ? <div className={s.iconLink}>
+                    <Icon className={s.icon}/>
+                    <h5 className={s.userName}>{userName}</h5>
+                </div> : <Link to={`/user/${userId}`} className={s.iconLink}>
+                    <Icon className={s.icon}/>
+                    <h5 className={s.userName}>{userName}</h5>
+                </Link>
+            }
 
             <h5 className={s.titlePost}>{title}</h5>
 
@@ -51,8 +55,6 @@ const Post = ({ title, body, userName, userId, postId, commentsPost }: PostType)
                 Comments
             </Button>
 
-
-            {/*<button onClick={getCommentsForPost} className={s.button}>Comments</button>*/}
             {isOpen && <>
                 {commentsPost.map((el, index) => (<div key={index} className={s.comment}>
                         <h5 className={s.emailComment}>{el.email}</h5>

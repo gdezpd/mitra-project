@@ -1,38 +1,66 @@
-import React from 'react';
-import { useParams } from "react-router-dom";
-
-import s from  './UserPage.module.scss'
+import React, { useEffect } from 'react';
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { RoutePath } from "../../router/routeConfig";
 import { useAppSelector } from "../../store/store";
-
+import Post from "../../components/post/Post";
+import { ReactComponent as Icon } from "../../assets/icon/user.svg";
+import s from './UserPage.module.scss'
 
 const UserPage = () => {
-
-    const dataUser = useParams()
-
     const {
         comments,
-        postsPage,
         allPosts,
-        sortPosts,
         users,
-        fetching,
-        totalCount,
-        searchValue
     } = useAppSelector(state => ({
-        postsPage: state.root.posts,
         comments: state.root.comments,
         allPosts: state.root.allPosts,
-        sortPosts: state.root.sortPosts,
         users: state.root.users,
-        fetching: state.root.fetching,
-        totalCount: state.root.totalCount,
-        searchValue: state.root.searchValue,
     }))
+
+    const dataUser = useParams()
+    const navigate = useNavigate()
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        if (users.filter(el => el.id === Number(dataUser.userId)).length < 1) {
+            navigate(RoutePath.home)
+        }
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <div className={s.containerUser}>
-            {dataUser.userId}
-            User Page
+            <Link to={RoutePath.home} className={s.wrapperButtonBack}>
+                <button className={s.buttonBack}>
+                    Come back
+                </button>
+            </Link>
+            {
+                users.filter(el => el.id === Number(dataUser.userId)).map((el, index) => (
+                    <div key={index} className={s.userItem}>
+                        <div>
+                            <h5 className={s.name}>{el.username}</h5>
+                            <div className={s.email}> {el.email} </div>
+                        </div>
+
+                        <Icon className={s.icon}/>
+                    </div>)
+                )
+            }
+            <div className={s.containerPosts}>
+                {allPosts.filter(el => el.userId === Number(dataUser.userId)).map((el, index) => {
+                        const user = users.find(user => user.id === el.userId)
+                        const commentsPost = comments.filter(post => post.postId === el.id)
+                        if (user) {
+                            return <div key={index} className={s.wrapperPost}>
+                                <Post title={el.title} body={el.body} userName={user.username} userId={user.id}
+                                      postId={el.id}
+                                      commentsPost={commentsPost}/>
+                            </div>
+                        }
+                    }
+                )}
+            </div>
         </div>
     );
 };
