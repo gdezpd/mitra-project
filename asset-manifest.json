@@ -1,29 +1,29 @@
 {
   "files": {
     "main.css": "/mitra-project/static/css/main.831dda4f.css",
-    "main.js": "/mitra-project/static/js/main.da6364bc.js",
+    "main.js": "/mitra-project/static/js/main.edbe783d.js",
     "static/css/227.f2313325.chunk.css": "/mitra-project/static/css/227.f2313325.chunk.css",
     "static/js/227.26c1bcec.chunk.js": "/mitra-project/static/js/227.26c1bcec.chunk.js",
     "static/css/359.f1e022b5.chunk.css": "/mitra-project/static/css/359.f1e022b5.chunk.css",
-    "static/js/359.5d1e2c94.chunk.js": "/mitra-project/static/js/359.5d1e2c94.chunk.js",
+    "static/js/359.b1433743.chunk.js": "/mitra-project/static/js/359.b1433743.chunk.js",
     "static/css/168.0999197f.chunk.css": "/mitra-project/static/css/168.0999197f.chunk.css",
     "static/js/168.67b34ea8.chunk.js": "/mitra-project/static/js/168.67b34ea8.chunk.js",
-    "static/js/942.bb57cbc7.chunk.js": "/mitra-project/static/js/942.bb57cbc7.chunk.js",
+    "static/js/942.a108b290.chunk.js": "/mitra-project/static/js/942.a108b290.chunk.js",
     "static/media/111.jpg": "/mitra-project/static/media/111.424e88c7795efe660d8f.jpg",
     "static/media/user.svg": "/mitra-project/static/media/user.a36a0f9de3c2bae928d02420189c2e8d.svg",
     "index.html": "/mitra-project/index.html",
     "main.831dda4f.css.map": "/mitra-project/static/css/main.831dda4f.css.map",
-    "main.da6364bc.js.map": "/mitra-project/static/js/main.da6364bc.js.map",
+    "main.edbe783d.js.map": "/mitra-project/static/js/main.edbe783d.js.map",
     "227.f2313325.chunk.css.map": "/mitra-project/static/css/227.f2313325.chunk.css.map",
     "227.26c1bcec.chunk.js.map": "/mitra-project/static/js/227.26c1bcec.chunk.js.map",
     "359.f1e022b5.chunk.css.map": "/mitra-project/static/css/359.f1e022b5.chunk.css.map",
-    "359.5d1e2c94.chunk.js.map": "/mitra-project/static/js/359.5d1e2c94.chunk.js.map",
+    "359.b1433743.chunk.js.map": "/mitra-project/static/js/359.b1433743.chunk.js.map",
     "168.0999197f.chunk.css.map": "/mitra-project/static/css/168.0999197f.chunk.css.map",
     "168.67b34ea8.chunk.js.map": "/mitra-project/static/js/168.67b34ea8.chunk.js.map",
-    "942.bb57cbc7.chunk.js.map": "/mitra-project/static/js/942.bb57cbc7.chunk.js.map"
+    "942.a108b290.chunk.js.map": "/mitra-project/static/js/942.a108b290.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.831dda4f.css",
-    "static/js/main.da6364bc.js"
+    "static/js/main.edbe783d.js"
   ]
 }
