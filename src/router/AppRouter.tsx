@@ -11,7 +11,7 @@ export const AppRouter = () => (
                 path={path}
                 element={(
                     <Suspense fallback={<Spinner
-                        style={{ position: 'absolute', top: '40%', left: '50%', height: '50px', width: '50px' }}
+                        style={{ position: 'absolute', top: '40%', left: '44%', height: '50px', width: '50px', }}
                         animation='border'/>}>
                         <div className='page-wrapper'>{element}</div>
                     </Suspense>
