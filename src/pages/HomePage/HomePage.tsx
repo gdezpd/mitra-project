@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { isFetchingStatus, rootThunks, sortPostsCreator } from "../../store/rootSlice";
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { SearchForm } from "../../components/searchForm/SearchForm";
@@ -93,6 +93,12 @@ const HomePage = () => {
                     <ArrayPage postsPage={postsPage} sortPosts={sortPosts} sort={sort}/>
                     : <ArrayAllPosts allPosts={allPosts} sortPosts={sortPosts} searchValue={searchValue} sort={sort}/>
             }
+            <div>
+                {fetching && <div className={s.spinner}>
+                    <Spinner
+                        animation='border'/>
+                </div>}
+            </div>
         </div>
     );
 };
