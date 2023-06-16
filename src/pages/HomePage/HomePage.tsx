@@ -12,7 +12,7 @@ const HomePage = () => {
     const dispatch = useAppDispatch()
 
     const { getPosts,
-        // getUsers, getAllPosts
+        getUsers, getAllPosts
     } = useActions(rootThunks)
 
     const {
@@ -40,8 +40,8 @@ const HomePage = () => {
     }, [fetching])
 
     useEffect(() => {
-        // getAllPosts({})
-        // getUsers({})
+        getAllPosts({})
+        getUsers({})
     }, [])
 
     useEffect(() => {
