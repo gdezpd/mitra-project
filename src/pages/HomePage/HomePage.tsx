@@ -11,7 +11,9 @@ import s from './HomePage.module.scss'
 const HomePage = () => {
     const dispatch = useAppDispatch()
 
-    const { getPosts, getUsers, getAllPosts } = useActions(rootThunks)
+    const { getPosts,
+        // getUsers, getAllPosts
+    } = useActions(rootThunks)
 
     const {
         postsPage,
@@ -38,8 +40,8 @@ const HomePage = () => {
     }, [fetching])
 
     useEffect(() => {
-        getAllPosts({})
-        getUsers({})
+        // getAllPosts({})
+        // getUsers({})
     }, [])
 
     useEffect(() => {

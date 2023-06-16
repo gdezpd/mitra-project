@@ -1,4 +1,5 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 import s from './Burger.module.scss'
 
 type BurgerMenuType = {
@@ -20,11 +21,13 @@ export const BurgerMenu = ({ toggleMobileMenu, isShown }: BurgerMenuType) => {
                 </h3>
 
                 <ul className={s.links}>
-                    <li style={{ listStyleType: 'none' }}><a className={s.menuItem} href='/about'
-                                                           onClick={toggleMobileMenu}>About
-                        me</a></li>
-                    <li style={{ listStyleType: 'none' }}><a className={s.menuItem} href='/' onClick={toggleMobileMenu}>Home
-                        page</a></li>
+                    <li style={{ listStyleType: 'none' }}>
+                        <NavLink className={s.menuItem} to='/about'
+                                 onClick={toggleMobileMenu}>About
+                            me</NavLink></li>
+                    <li style={{ listStyleType: 'none' }}><NavLink className={s.menuItem} to='/'
+                                                                 onClick={toggleMobileMenu}>Home
+                        page</NavLink></li>
                 </ul>
             </div>
 

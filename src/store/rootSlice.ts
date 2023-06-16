@@ -29,8 +29,9 @@ export const getAllPosts = createAsyncThunk<PostType[], any, { state: RootState 
         return rejectWithValue(null)
     }
 })
-export const getUsers = createAsyncThunk<UserType[], any>('root/getUsers', async (_, { rejectWithValue }) => {
+export const getUsers = createAsyncThunk<UserType[], any>('root/getUsers', async (_, { rejectWithValue, dispatch }) => {
     try {
+        dispatch
         const result = await api.getUsers()
         return result.data
     } catch (error) {
